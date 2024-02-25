@@ -1,2 +1,0 @@
-token github
-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

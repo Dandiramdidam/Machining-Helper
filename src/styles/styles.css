@@ -1,58 +1,392 @@
-/* style do kalkulatora */
+/* ogólne */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  /* margin: 20px; */
+  padding: 0;
+  margin: 0;
+  background: grey;
+}
+h1 {
+  margin-top: 0;
+  font-size: 22px;
+}
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+code {
+  font-size: 1.2em;
+}
+ul {
+  padding-left: 20px;
+}
+* {
+  box-sizing: border-box;
+}
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+.status {
+  margin-bottom: 10px;
+}
+.game {
+  display: flex;
+  flex-direction: row;
+}
+.game-info {
+  margin-left: 20px;
+}
+.whole {
+  margin-top: 50px;
+}
+.headline {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: darkgrey;
+  margin: 0px;
+  font-size: 7vw;
+  font-weight: bolder;
+}
+.mainopt {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.mainbtn {
+  width: 80vw;
+  height: 10vw;
+  font-weight: bolder;
+  font-size: 5vw;  
+  margin-top: 2vw;
+  cursor: pointer;
+}
+.mainopts {
+  padding-top: 15px;
+}
+/* ogólne */
 
 
+/* help */
+.help {
+  position: fixed;
+  z-index: 1;
+  top: 25%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  background-color: white; 
+  padding: 20px;
+  border: 3px solid black;
+  font-size: 2.5vh;
+}
+.helpclose {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  border: 2px solid black;
+}
+/* help */
+
+
+/* navbar */
+.navbar {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+}
+.navbarbtn {
+  cursor: pointer;
+  border: 3px solid black;
+  color: black;
+  font-size: 13px;
+  font-weight: bolder;
+  margin: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbarbtnb {
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+}
+.navbarbtnh {
+  width: 30px;
+  height: 30px;
+}
+.navbarbtnl {
+  width: 60px;
+  height: 30px;
+}
+.date {
+  font-weight: bolder;
+  display: flex;
+  border: 3px solid black;
+  width: 90px;
+  height: 30px;
+  margin: 1vw;
+  color: black;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+}
+/* navbar */
+
+
+/* kalkulator */
 *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    background: linear-gradient(to right, #00AAFF, #00FF6C);
-  }
-  
-  .calculator-grid {
-    display: grid;
-    margin-top: 2rem;
-    justify-content: center;
-    grid-template-columns: repeat(4, 6rem);
-    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
-  }
-  
-  .calculator-grid > button {
-    cursor: pointer;
-    font-size: 2rem;
-    border: 1px solid white;
-    outline: none;
-    background-color: rgba(255, 255, 255, .75);
-  }
-  
-  .calculator-grid > button:hover,
-  .calculator-grid > button:focus {
-    background-color: rgba(255, 255, 255, .9);
-  }
-  
-  .span-two {
-    grid-column: span 2;
-  }
-  
-  .output {
-    grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, .75);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
-    padding: .75rem;
-    word-wrap: break-word;
-    word-break: break-all;
-  }
-  
-  .output .previous-operand {
-    color: rgba(255, 255, 255, .75);
-    font-size: 1.5rem;
-  }
-  
-  .output .current-operand {
-    color: white;
-    font-size: 2.5rem;
-  }
+  box-sizing: border-box;
+}
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 25vw);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 5rem);
+}
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: lightgray;
+}
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+  background-color: rgba(255, 255, 255, .9);
+}
+.span-two {
+  grid-column: span 2;
+}
+.output {
+  grid-column: 1 / -1;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: .75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.output .previous-operand {
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+/* kalkulator */
+
+
+/* mkalkulator */
+.mmenus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5vh;
+}
+.mmenu1 {
+  margin: 5px;
+  height: 4vh;
+  width: 25vw;
+  font-size: 3.5vw;
+  border: 2px solid black;
+}
+.mmenu2 {
+  margin: 5px;
+  height: 4vh;
+  width: 60vw;
+  font-size: 3.5vw;
+  border: 2px solid black;
+}
+.moutput {
+  grid-column: 1 / -1;
+  background-color: black;
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+}
+.result {
+  color: white;
+  font-weight: bold;
+  font-size: 3.8vw;
+}
+.mbuttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+}
+.mbutton {
+  margin: 5px;
+  height: 4vh;
+  width: 25vw;
+  font-size: 3.5vw;
+  border: 2px solid black;
+}
+.minputs {
+  display: grid;
+  place-items: center;
+}
+.minput {
+  border: 2px solid black;
+  height: 4vh;
+  width: 70vw;
+}
+.minpute {
+  font-weight: bold;
+}
+/* mkalkulator */
+
+
+/* baza kodu */
+.codebuttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1vw solid black;
+}
+.codebutton {
+  width: 50vw;
+  height: 8vw;
+  border: 0.5vw solid black;
+  font-weight: bold;
+  font-size: 5vw;
+}
+.codelist {
+  color: white;
+  padding-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+}
+.codeitem {
+  border-bottom: 1px solid white;
+  margin-bottom: 5px;
+  font-size: 2.8vh;
+  padding: 8px;
+}
+/* baza kodu */
+
+
+/* tkalkulator */
+.tinput {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.dinput {
+  width: 55vw;
+  height: 4.2vh;
+  font-size: 4.5vw;
+  border: 3px solid black;
+}
+.hands {
+  display: flex;
+  justify-content: center;
+}
+.holeshaft {
+  background-color: lightgray;
+  border: 2px solid black;
+  margin: 5px;
+  padding: 15px;
+  width: 45vw;
+  font-size: 4.3vw;
+}
+.nameit {
+  display: flex;
+}
+.it {
+  margin-left: auto;
+  border: 2px solid black;
+  width: 12vw;
+  height: 8vw;
+}
+/* tkalkulator */
+
+
+/* gwinty */
+.tbuttons {
+  display: flex;
+  border: 2px solid black;
+  margin-bottom: 24px;
+}
+.tbutton {
+  width: 33vw;
+  height: 8vw;
+  border: 2px solid black;
+  font-weight: bolder;
+}
+.table {
+  width: 86vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 9px;
+  font-size: 4.2vw;
+}
+th {
+  background-color: lightgray;
+  font-weight: bold;
+}
+tr:nth-child(even) {
+  background-color: lightgray;
+}
+tr:nth-child(odd) {
+  background-color: white;
+}
+.divtable {
+  overflow-x: auto;
+}
+/* gwinty */
