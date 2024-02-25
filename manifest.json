@@ -2,7 +2,18 @@
   "short_name": "Machining Helper",
   "name": "Machining Helper",
   "icons": [
-      
+      {
+        "src": "/manifest-icon-192.png",
+        "sizes": "192x192", 
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/manifest-icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
       {
         "src": "/manifest-icon-512.png",
         "sizes": "512x512",
@@ -16,7 +27,7 @@
         "purpose": "maskable"
       }
   ],
-  "start_url": ".",
+  "start_url": "/Machining-Helper/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
