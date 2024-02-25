@@ -14,7 +14,7 @@ const isLocalhost = Boolean(
       }
   
       window.addEventListener('load', () => {
-        const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+        const swUrl = `${process.env.PUBLIC_URL}/serviceWorker.js`;
   
         if (isLocalhost) {
           checkValidServiceWorker(swUrl, config);
